@@ -29,8 +29,10 @@ def form():
         with col1:
             name = st.text_input("Name", placeholder= "Name",label_visibility='hidden')
             home_phone = st.text_input("Phone",placeholder="Phone",label_visibility='hidden')
+            
         with col2: 
             email = st.text_input("Email adress", placeholder="Email address",label_visibility='hidden')
+            gender = st.selectbox( 'Gender', ('Male', 'Female', 'Other'))
         st.markdown("""---""")
         # address = st.text_input("Address")
         # city = st.text_input("City")
@@ -59,6 +61,7 @@ def form():
             fill_color="rgba(255, 165, 0, 0.3)",  # Fixed fill color with some opacity
             stroke_width=2,
             height=150,
+            width=250,
             key="canvas",
         )
         print(canvas_result.image_data)
