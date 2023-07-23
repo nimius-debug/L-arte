@@ -3,13 +3,13 @@ from PIL import Image
 from streamlit_drawable_canvas import st_canvas
 
 def logo():
-    col1, col2, col3 = st.columns(3)
+    col1, col2, col3 = st.columns([1,2,1])
 
     with col1:
         st.write(' ')
 
     with col2:
-        logo = Image.open('img/logo2.png')
+        logo = Image.open('img/logo3.png')
         st.image(logo, use_column_width= "auto")
 
     with col3:
