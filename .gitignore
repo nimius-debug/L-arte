@@ -186,6 +186,7 @@ build/
 # streamlit/
 .streamlit/secrets.toml
 # .toml
+helper.py
 
 # Google secrets files
 client_secrets.json
