@@ -37,7 +37,26 @@ def display_text_input_questions(data: dict, questions: dict) -> None:
         text = st.text_area(question, key=key)
         lines = text.split("\n")
         data["answers"][key] = " ".join(lines)
-#########################signature pad#########################
+
+#4-########################informed consent#########################
+def display_informed_consent(data: dict) -> None:
+    """
+    Displays the Informed Consent Release section of the form.
+    """
+    st.subheader("Informed Consent Release")
+    consent_text = f"""I ________{data['personal_info']['name']}________ , do fully understand all the questions above and have answered them
+            all correctly and honestly. I understand that the services offered are not a substitute for medical care. I
+            understand that the skin care professional will completely inform me of what to expect in the course of
+            treatment and will recommend adjustments to my regimen if deemed necessary. I also am aware that
+            individual results are dependent upon my age, skin condition, and lifestyle. I agree to actively participate
+            in following appointment schedules and home care procedures to the best of my ability, so that I may
+            obtain maximum effectiveness. In the event that I may have additional questions or concerns regarding
+            my treatment or suggested home product routine, I will inform my skin care professional immediately.
+            I release and hold harmless the skin care professional Laura Lopez, SKIN by Laura Lo, and the
+            staff harmless from any liability for adverse reactions that may result from this treatment."""
+    st.markdown(consent_text, unsafe_allow_html=True)
+    
+#5-########################signature pad#########################
 @st.cache_data
 def signature_pad(canvas_result)-> BytesIO:
     # Convert the numpy array to PIL image
