@@ -9,20 +9,27 @@ import webbrowser
 
 #########################form#########################
 def display_waxing_form():
-    from utils.map_data import data
-    from utils.map_data import wax_mutiplechoice_questions, wax_fillin_questions
+    from data.map_data import data
+    # from data.map_data import wax_mutiplechoice_questions, wax_fillin_questions
+    
     #############Personal Information##################
-    personal_information(data, key="waxing")
+    st.subheader(st.session_state.app_text["english"]["personal_info"]["header"])
+    personal_information(data , st.session_state.app_text["english"]["personal_info"], key="waxing")
+    
     with st.form(key='Skincare Form'):
-       
+        
         # ######################multiple-choice questions ######################
-        display_multiple_choice_questions(data, wax_mutiplechoice_questions)
+        st.subheader(st.session_state.app_text["english"]["skin_history"])
+        display_multiple_choice_questions(data, st.session_state.app_text["spanish"]["wax_mutiplechoice_questions"])
+        
         ######################answer questions ######################
         st.markdown("""---""")
-        display_text_input_questions(data, wax_fillin_questions)
-        st.markdown("""---""")
+        display_text_input_questions(data, st.session_state.app_text["spanish"]["wax_fillin_questions"])
+        
         ######################informed consent ######################
-        display_informed_consent(data)
+        st.markdown("""---""")
+        st.subheader(st.session_state.app_text["english"]["informed_consent"]["header"])
+        display_informed_consent(data, st.session_state.app_text["spanish"]["informed_consent"]["consent_text"])
         
         st.caption("Please sign the form")
         canvas_result = st_canvas(

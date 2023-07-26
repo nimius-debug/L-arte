@@ -57,8 +57,6 @@ def text_area(c: Canvas, form:Canvas.acroForm, x: int, y: int, width: int, heigh
     # draw the question
     c.setFont("Times-Roman", 12)
     chunck_text(c, x, y+80, question)
-   
-
     # draw the text area
     form.textfield(name=name, x=x, y=y, width=width, height=height, 
                    value=data, textColor=black, fillColor=HexColor("#EDEDED"), 

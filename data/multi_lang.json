@@ -1,0 +1,89 @@
+{
+    "english": {
+        "personal_info": {
+            "header": "Personal Information",
+            "name": "Name",
+            "phone": "Phone",
+            "email": "Email address",
+            "gender": {
+                "label":"Gender",
+                "options": ["Male", "Female", "Other"]
+            }
+        },
+        "skin_history": "Skin History",
+        "response_options": ["No", "Yes"],
+        "wax_mutiplechoice_questions": {
+            "aha_usage": "Have you used any Alpha Hydroxy Acid (AHA) or glycolic products in the past 48-72 hours?",
+            "retin_a_usage": "Are you using Retin-a, Renova or Accutane (an oral form of Retin-a)?",
+            "skin_thinning_products_usage": "Are you using any other skin thinning products and/or drugs?",
+            "sun_exposure": "Are you exposed to the sun on a daily basis or are you considering spending more time in the sun soon?",
+            "tanning_bed_usage": "Do you use a tanning bed?",
+            "is_diabetic": "Are you diabetic?"
+        },
+        "wax_fillin_questions": {
+            "medication": "Are you currently taking medications? If so, please list all (including over the counter drugs/herbal supplements):",
+            "skin_products": "What skin products do you regularly use on your skin?",
+            "cancer_history": "Have you ever been treated for cancer? If yes, when and what types of therapies were used?",
+            "other_conditions": "Please list any other illness/condition you are currently being treated for by a medical professional",
+            "menstrual_cycle": "(Female clients) When is your next menstrual cycle due to begin?"
+        },
+        "informed_consent": {
+            "header": "Informed Consent Release",
+            "consent_text": "I ________{name}________ , do fully understand all the questions above and have answered them all correctly and honestly. I understand that the services offered are not a substitute for medical care. I understand that the skin care professional will completely inform me of what to expect in the course of treatment and will recommend adjustments to my regimen if deemed necessary. I also am aware that individual results are dependent upon my age, skin condition, and lifestyle. I agree to actively participate in following appointment schedules and home care procedures to the best of my ability, so that I may obtain maximum effectiveness. In the event that I may have additional questions or concerns regarding my treatment or suggested home product routine, I will inform my skin care professional immediately. I release and hold harmless the skin care professional Laura Lopez, SKIN by Laura Lo, and the staff harmless from any liability for adverse reactions that may result from this treatment."
+        },
+        "form": {
+            "header": "Skincare Form",
+            "sign_form": "Please sign the form",
+            "submit": "Submit",
+            "submit_success": "Form submitted successfully.",
+            "missing_signature": "Please sign the form",
+            "missing_name": "Please enter your name",
+            "missing_email": "Please enter your email address",
+            "missing_phone": "Please enter your phone number"
+        }
+    },
+    "spanish": {
+        "personal_info": {
+            "header": "Información personal",
+            "name": "Nombre",
+            "phone": "Teléfono",
+            "email": "Correo electrónico",
+            "gender": {
+                "label": "Género",
+                "options": ["Masculino", "Femenino", "Otro"]
+            }
+        },
+        "skin_history": "Historial de piel",
+        "response_options": ["No", "Sí"],
+        "wax_mutiplechoice_questions": {
+            "aha_usage": "¿Ha utilizado productos de Ácido Alfa Hidroxi (AHA) o glicólico en las últimas 48-72 horas?",
+            "retin_a_usage": "¿Está utilizando Retin-a, Renova o Accutane (una forma oral de Retin-a)?",
+            "skin_thinning_products_usage": "¿Está utilizando otros productos para adelgazar la piel y/o medicamentos?",
+            "sun_exposure": "¿Está expuesto al sol a diario o está considerando pasar más tiempo al sol próximamente?",
+            "tanning_bed_usage": "¿Usa una cama de bronceado?",
+            "is_diabetic": "¿Es usted diabético?"
+        },
+        "wax_fillin_questions": {
+            "medication": "¿Está tomando medicamentos actualmente? Si es así, por favor liste todos (incluyendo medicamentos de venta libre/suplementos herbales):",
+            "skin_products": "¿Qué productos para la piel utiliza regularmente en su piel?",
+            "cancer_history": "¿Alguna vez ha sido tratado por cáncer? Si es así, ¿cuándo y qué tipos de terapias se utilizaron?",
+            "other_conditions": "Por favor, liste cualquier otra enfermedad/condición por la que esté siendo tratado actualmente por un profesional médico",
+            "menstrual_cycle": "(Clientes femeninas) ¿Cuándo está previsto que comience su próximo ciclo menstrual?"
+        },
+        "informed_consent": {
+            "header": "Consentimiento y Autorización  ",
+            "consent_text": "Yo ________{name}________ , entiendo completamente todas las preguntas anteriores y las he respondido correctamente y con honestidad. Entiendo que los servicios ofrecidos no son un sustituto para la atención médica. Entiendo que el profesional del cuidado de la piel me informará completamente sobre qué esperar en el curso del tratamiento y recomendará ajustes en mi régimen si se considera necesario. También soy consciente de que los resultados individuales dependen de mi edad, condición de la piel y estilo de vida. Me comprometo a participar activamente en el seguimiento de los horarios de las citas y los procedimientos de cuidado en casa lo mejor que pueda, para que pueda obtener la máxima efectividad. En el caso de que tenga preguntas o preocupaciones adicionales con respecto a mi tratamiento o rutina de productos para el hogar sugeridos, informaré inmediatamente a mi profesional del cuidado de la piel. Eximo de responsabilidad y mantengo indemne al profesional del cuidado de la piel Laura Lopez, SKIN by Laura Lo, y al personal de cualquier responsabilidad por reacciones adversas que puedan resultar de este tratamiento."
+        },
+        "form": {
+            "header": "Formulario de Cuidado de la Piel",
+            "sign_form": "Por favor firme el formulario",
+            "submit": "Enviar",
+            "submit_success": "Formulario enviado con éxito.",
+            "missing_signature": "Por favor firme el formulario",
+            "missing_name": "Por favor ingrese su nombre",
+            "missing_email": "Por favor ingrese su correo electrónico",
+            "missing_phone": "Por favor ingrese su número de teléfono"
+        }
+    }
+}
+  
