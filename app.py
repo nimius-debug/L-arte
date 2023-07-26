@@ -1,5 +1,6 @@
 import streamlit as st
-from components.form import form , logo, backgound_img,sidebar
+from components.waxin_form import display_waxing_form 
+from components.page_components import sidebar, set_backgound_img, display_logo
 
 st.set_page_config(
         page_title="INFORMED CONSENT RELEASE",
@@ -9,9 +10,9 @@ st.set_page_config(
     )
 def main():
     sidebar()
-    backgound_img()
-    logo()
-    form()
+    set_backgound_img()
+    display_logo()
+    display_waxing_form()
     # Create a canvas component
     
     
