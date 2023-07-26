@@ -188,6 +188,7 @@ build/
 # .toml
 helper.py
 
+form_output.pdf
 # Google secrets files
 client_secrets.json
 bsv_auth2_secrets.json

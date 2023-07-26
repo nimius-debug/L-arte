@@ -34,8 +34,9 @@ def display_text_input_questions(data: dict, questions: dict) -> None:
     Generates text input questions for the form.
     """
     for key, question in questions.items():
-        data["answers"][key] = st.text_input(question, key=key)
-
+        text = st.text_area(question, key=key)
+        lines = text.split("\n")
+        data["answers"][key] = " ".join(lines)
 #########################signature pad#########################
 @st.cache_data
 def signature_pad(canvas_result)-> BytesIO:
