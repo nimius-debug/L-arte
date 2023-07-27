@@ -3,8 +3,7 @@ import streamlit as st
 from streamlit_drawable_canvas import st_canvas
 # from streamlit_extras.switch_page_button import switch_page
 from utils.generate_pdf import create_pdf
-from components.form_components import signature_pad, display_multiple_choice_questions,\
-    personal_information, display_text_input_questions, display_informed_consent
+from components.form_components import signature_pad, display_multiple_choice_questions, personal_information, display_text_input_questions, display_informed_consent
 import webbrowser
 
 #########################form#########################
