@@ -57,7 +57,7 @@ def hide_footer_streamlit():
             <style>
             #MainMenu {visibility: hidden;}
             footer {visibility: hidden;}
-            .viewerBadge_link__qRIco {visibility: hidden;}
+            .viewerBadge_container__r5tak  {visibility: hidden;}
             //header {visibility: hidden;}
             </style>
             """
