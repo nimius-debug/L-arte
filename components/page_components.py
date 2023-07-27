@@ -4,20 +4,9 @@ from PIL import Image
 
 #########################sidebar#########################
 def sidebar():
-    page_bg_img = f"""
-        <style>
-        [data-testid="stSidebar"] > div:first-child {{
-        background-color: #EDEDED;");
-        background-position: center; 
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        }}
-        </style>
-    """
-    st.markdown(page_bg_img, unsafe_allow_html=True)
     with st.sidebar:
         st.title("Sidebar")
-        
+      
 #########################BACKGROUND  #########################
 #########################image to base64 background #########################
 @st.cache_data
@@ -33,11 +22,17 @@ def set_backgound_img():
     page_bg_img = f"""
     <style>
     [data-testid="stAppViewContainer"] > .main {{
-    background-image: url("data:image/png;base64,{img}");
-    background-size: cover;
-    background-position: top left;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+        background-image: url("data:image/png;base64,{img}");
+        background-size: cover;
+        background-position: top left;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }}
+    [data-testid="stSidebar"] > div:first-child {{
+        background-color: #EDEDED;");
+        background-position: center; 
+        background-repeat: no-repeat;
+        background-attachment: fixed;
     }}
 
     [data-testid="stHeader"] {{
@@ -53,15 +48,13 @@ def set_backgound_img():
 #########################logo#########################
 @st.cache_data
 def hide_footer_streamlit():
-    hide_st_style = """
+    hide_streamlit_style = """
             <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            .viewerBadge_container__r5tak  {visibility: hidden;}
-            //header {visibility: hidden;}
+            [data-testid="stToolbar"] {visibility: hidden !important;}
+            footer {visibility: hidden !important;}
             </style>
             """
-    st.markdown(hide_st_style, unsafe_allow_html=True)
+    st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 #########################logo#########################
 def display_logo():
     """
