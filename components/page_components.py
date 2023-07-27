@@ -50,7 +50,18 @@ def set_backgound_img():
     </style>
     """
     st.markdown(page_bg_img, unsafe_allow_html=True)
-    
+#########################logo#########################
+@st.cache_data
+def hide_footer_streamlit():
+    hide_st_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            .viewerBadge_link__qRIco {visibility: hidden;}
+            //header {visibility: hidden;}
+            </style>
+            """
+    st.markdown(hide_st_style, unsafe_allow_html=True)
 #########################logo#########################
 def display_logo():
     """
