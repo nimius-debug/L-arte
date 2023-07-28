@@ -63,7 +63,7 @@ def set_backgound_img():
         background-repeat: no-repeat;
         background-attachment: fixed;
     }}
-
+.css-1y4p8pa
     [data-testid="stHeader"] {{
     background: rgba(0,0,0,0);
     }}
@@ -72,9 +72,8 @@ def set_backgound_img():
     right: 2rem;
     }}
     
-    [data-testid="stVerticalBlock"] {{
-    right: 0rem;
-    margin-top: -100px
+    .css-1y4p8pa {{
+        padding: 1rem 1rem 10rem
     }}
     data
     </style>
