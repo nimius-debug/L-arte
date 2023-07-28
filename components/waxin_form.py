@@ -57,6 +57,6 @@ def display_waxing_form():
             else:
                 st.success("Form submitted successfully.")
                 st.write(data)
-                create_pdf(data)
+                create_pdf(data,st.session_state.app_text,st.session_state.language)
                 # webbrowser.open("https://giphy.com/gifs/usanetwork-wwe-wweraw-wwelive-ngkM4UbZBTZWKrj0wI/fullscreen")
                 #switch_page("Service")

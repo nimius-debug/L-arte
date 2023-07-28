@@ -1,7 +1,7 @@
 import streamlit as st
 import json
 from components.waxin_form import display_waxing_form
-from components.page_components import sidebar, set_backgound_img, display_logo, hide_footer_streamlit
+from components.page_components import sidebar, set_backgound_img, display_logo, hide_footer_streamlit,horizontal_menu
 
 st.set_page_config(
         page_title="INFORMED CONSENT RELEASE",
@@ -25,15 +25,19 @@ def language_settings(lang):
 def main():
     if 'app_text' not in st.session_state:
         st.session_state.app_text = load_json_data('data/multi_lang.json')
- 
-    language = st.sidebar.selectbox("Select Language", ["english", "spanish"], index=1)
-    language_settings(language)
     
-    sidebar()
-    hide_footer_streamlit()
+    #gloabal settings
     set_backgound_img()
-    display_logo() 
-    display_waxing_form()
+    hide_footer_streamlit()
+    
+    selection = horizontal_menu()
+    if selection == 'Forms':
+        display_logo() 
+        language = st.selectbox("Select Language", ["english", "spanish"], index=1)
+        language_settings(language)
+        wax, facial = st.tabs(["Waxing Form", "Facial Form"])
+        with wax:
+            display_waxing_form()
     # Create a canvas component
     
     

@@ -21,15 +21,15 @@ def session_header(c: Canvas, x: int, y: int, data: str) -> None:
     c.setLineWidth(1)
     c.line(50, y-5, 550, y-5)
 
-def textbox(c: Canvas, form: Canvas.acroForm, x: int, y: int, width: int, height: int, data: str, name: str, header: str) -> None:
+def textbox(c: Canvas, form: Canvas.acroForm, x: int, y: int, width: int, height: int, data: str, name: str) -> None:
     # c.setFont("Helvetica", 12)
     c.setFont("Times-Roman", 12)
-    c.drawString(x, y+30, header)
+    c.drawString(x, y+30, f"{name} :")
     form.textfield(name=name,  x=x, y=y, width=width, height=height,
                    value=data, textColor=black, fillColor=HexColor("#EDEDED"), 
                    fieldFlags='readOnly', fontName="Times-Roman")
 
-def create_radio_group(c: Canvas, form:Canvas.acroForm, group_name: str, question: str, data: str, x: int, y: int) -> None:
+def create_radio_group(c: Canvas, form:Canvas.acroForm, group_name: str, question: str, data: str, x: int, y: int, options: list) -> None:
     """
     Function to create a 2 radio button group in a PDF.
     """
@@ -39,16 +39,16 @@ def create_radio_group(c: Canvas, form:Canvas.acroForm, group_name: str, questio
     # c.drawString(x, y, question)
 
     # draw the 'No' radio button
-    form.radio(name=group_name, value='No', selected=(data == 'No'), x=x, y=y-20, buttonStyle='circle',
+    form.radio(name=group_name, value=options[0], selected=(data == options[0]), x=x, y=y-20, buttonStyle='circle',
         shape='circle',size=15, fieldFlags='readOnly')
 
     # draw the 'Yes' radio button
-    form.radio(name=group_name,value='Yes', selected=(data == 'Yes'),x=x+50, y=y-20, buttonStyle='circle',
+    form.radio(name=group_name,value=options[1], selected=(data == options[1]),x=x+50, y=y-20, buttonStyle='circle',
         shape='circle',size=15, fieldFlags='readOnly')
 
     # draw the 'No' and 'Yes' labels
-    c.drawString(x+20, y-20, 'No')
-    c.drawString(x+70, y-20, 'Yes')
+    c.drawString(x+20, y-20, options[0])
+    c.drawString(x+70, y-20, options[1])
     
 def text_area(c: Canvas, form:Canvas.acroForm, x: int, y: int, width: int, height: int, data: str, name: str, question: str) -> None:
     """
@@ -85,7 +85,7 @@ def client_signature(c: Canvas, x: int, y:int, data_bytes:BytesIO ) -> None:
     c.drawString(x+400, y+5, gets_todays_date())
     
 
-def create_pdf(data):
+def create_pdf(data:dict, app_text:dict, language:str):
     c = canvas.Canvas("form_output.pdf", pagesize=letter)
     form = c.acroForm
     c.setTitle(f"wax_release_for, {data['personal_info']['name']} {gets_todays_date()}")
@@ -101,26 +101,28 @@ def create_pdf(data):
     c.drawImage(logo_path, x, y, width=logo_width, height=logo_height)
 
     # Personal Info
-    session_header(c, 50, 610, "Personal Information")
-    textbox(c,form, 50, 550, 200, 24, data['personal_info']['name'], 'name', 'Name:')
-    textbox(c,form, 350, 550, 200, 24, data['personal_info']['phone'], 'phone', 'Phone:')
-    textbox(c,form, 50, 500, 250, 24, data['personal_info']['email'], 'email', 'Email:')
-    textbox(c,form, 350, 500, 100, 24, data['personal_info']['gender'], 'gender', 'Gender:')
+    session_header(c, 50, 610, app_text[language]["personal_info"]["header"])
+       
+    # textbox(c,form, 50, 550, 200, 24, data['personal_info'][key], app_text[language]["personal_info"][key])
+    textbox(c,form, 50, 550, 200, 24, data['personal_info']['name'], app_text[language]["personal_info"]["name"])
+    textbox(c,form, 350, 550, 200, 24, data['personal_info']['phone'], app_text[language]["personal_info"]["phone"])
+    textbox(c,form, 50, 500, 250, 24, data['personal_info']['email'], app_text[language]["personal_info"]["email"])
+    textbox(c,form, 350, 500, 100, 24, data['personal_info']['gender'], app_text[language]["personal_info"]["gender"]["label"])
 
     # Multiple Choice Question
-    session_header(c, 50, 450, "Skin History")
-    create_radio_group(c,form, 'aha_usage', 'Have you used any Alpha Hydroxy Acid (AHA) or glycolic products in the past 48-72 hours?', 
-                       data['multiple_choice_answers']['aha_usage'], 50, 420)
-    create_radio_group(c,form, 'retin_a_usage', 'Are you using Retin-a, Renova or Accutane (an oral form of Retin-a)?', 
-                       data['multiple_choice_answers']['retin_a_usage'], 50, 380)
-    create_radio_group(c,form, 'skin_thinning_products_usage', 'Are you using any other skin thinning products and/or drugs?', 
-                       data['multiple_choice_answers']['skin_thinning_products_usage'], 50, 340)
-    create_radio_group(c,form, 'sun_exposure', 'Are you exposed to the sun on a daily basis or are you considering spending more time in the sun soon?', 
-                       data['multiple_choice_answers']['sun_exposure'], 50, 300)
-    create_radio_group(c,form, 'tanning_bed_usage', 'Do you use a tanning bed?', 
-                       data['multiple_choice_answers']['tanning_bed_usage'], 50, 260)
-    create_radio_group(c,form, 'is_diabetic', 'Are you diabetic?', 
-                       data['multiple_choice_answers']['is_diabetic'], 50, 220)
+    session_header(c, 50, 450, app_text[language]["skin_history"])
+    y_decrement = 0
+    y_pos = 420
+    for key in app_text[language]["wax_mutiplechoice_questions"].keys():
+        print(key)
+        y = y_pos - y_decrement
+        if y < 200:
+            c.showPage()
+            y = 650
+        create_radio_group(c,form, key, app_text[language]["wax_mutiplechoice_questions"][key], 
+                           data['multiple_choice_answers'][key], 50, y, app_text[language]["response_options"])
+        y_decrement += 40
+       
     
     ###################### Additional Information ######################
     session_header(c, 50, 170, "Additional Information")

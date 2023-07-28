@@ -1,11 +1,40 @@
 import streamlit as st
 import base64
 from PIL import Image
-
+from streamlit_option_menu import option_menu
 #########################sidebar#########################
 def sidebar():
     with st.sidebar:
         st.title("Sidebar")
+        
+#########################horizontal bar#########################
+def horizontal_menu():
+    selected_option = option_menu(
+        None, ["Home", "Price",  "Forms"], 
+        icons=['house-heart', 'wallet', "files"], 
+        menu_icon="cast", default_index=0, orientation="horizontal",
+        styles={
+            "container": {
+                "font-family": "Times New Roman, Times, serif",
+                "font-color": "#383b3a",
+                "padding": "0!important", 
+                "background-color": "#EDEDED"
+                },
+            "icon": {
+                "color": "black", 
+                "font-size": "24px"
+                }, 
+            "nav-link": {
+                "font-size": "20px", 
+                "text-align": "left", 
+                "margin":"0px", 
+                "--hover-color": "#FFFFFF"
+                },
+            "nav-link-selected": {"background-color": "#647B6E"},
+        }
+    )
+    return selected_option
+    
       
 #########################BACKGROUND  #########################
 #########################image to base64 background #########################

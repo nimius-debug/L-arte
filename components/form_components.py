@@ -59,7 +59,6 @@ def display_informed_consent(data: dict, consent_text ) -> None:
     """
     Displays the Informed Consent Release section of the form.
     """
-    st.subheader("Informed Consent Release")
     consent_text = consent_text.format(name=data['personal_info']['name'])
     st.markdown(consent_text, unsafe_allow_html=True)
     
