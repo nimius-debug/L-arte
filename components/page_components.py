@@ -74,7 +74,7 @@ def set_backgound_img():
     
     [data-testid="stVerticalBlock"] {{
     right: 0rem;
-    margin-top: -20px
+    margin-top: -100px
     }}
     data
     </style>
