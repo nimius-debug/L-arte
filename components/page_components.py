@@ -71,6 +71,12 @@ def set_backgound_img():
     [data-testid="stToolbar"] {{
     right: 2rem;
     }}
+    
+    [data-testid="stVerticalBlock"] {{
+    right: 0rem;
+    margin-top: -20px
+    }}
+    data
     </style>
     """
     st.markdown(page_bg_img, unsafe_allow_html=True)
