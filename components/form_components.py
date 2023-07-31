@@ -2,6 +2,12 @@ from io import BytesIO
 import numpy as np
 from PIL import Image
 import streamlit as st
+import re
+
+@st.cache_data
+def validate_email(email: str) -> bool:
+    email_regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b'
+    return re.match(email_regex, email) is not None
 
 #1- ########### personal information #########################
 def personal_information(data: dict, personal_info: dict, key: str) -> None:
@@ -29,6 +35,9 @@ def personal_information(data: dict, personal_info: dict, key: str) -> None:
             placeholder=personal_info["email"], 
             label_visibility='hidden', 
             key=key+'_email')
+        
+        if not validate_email(data["personal_info"]["email"]):
+            st.error("Please enter a valid email address.")
         
         data["personal_info"]["gender"] = st.selectbox(
             label=personal_info["gender"]["label"],

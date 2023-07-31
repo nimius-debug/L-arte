@@ -56,19 +56,33 @@ def text_area(c: Canvas, form:Canvas.acroForm, x: int, y: int, width: int, heigh
     """
     # draw the question
     c.setFont("Times-Roman", 12)
-    chunck_text(c, x, y+80, question)
-    # draw the text area
-    form.textfield(name=name, x=x, y=y, width=width, height=height, 
-                   value=data, textColor=black, fillColor=HexColor("#EDEDED"), 
-                   fieldFlags='readOnly', fontName="Times-Roman")
+    if check_overflown(question):
+        lines = textwrap.wrap(question, width=100)  # adjust width as necessary
+        for i, line in enumerate(lines):
+            c.drawString(x, y+80 -(i*14), line)  # adjust 14 (line height) as necessary
+        form.textfield(name=name, x=x, y=y, width=width, height=height, 
+                value=data, textColor=black, fillColor=HexColor("#EDEDED"), 
+                fieldFlags='readOnly', fontName="Times-Roman")
+    else:
+        c.drawString(x, y+80, question)
+        # draw the text area
+        form.textfield(name=name, x=x, y=y+15, width=width, height=height, 
+                value=data, textColor=black, fillColor=HexColor("#EDEDED"), 
+                fieldFlags='readOnly', fontName="Times-Roman")
 
+def check_overflown(check_text: str) -> bool:
+    str_width = stringWidth(check_text, "Times-Roman", 12)
+    if str_width > 500:
+        return True
+    else:
+        return False 
+     
 def chunck_text(c: Canvas,x: int,y:int, data_str: str) -> None:
     c.setFont("Times-Roman", 12)
-    str_width = stringWidth(data_str, "Times-Roman", 12)
     # check if the question string is longer than 550
-    if str_width > 500:
+    if check_overflown(data_str):
         # split the question into multiple lines
-        lines = textwrap.wrap(data_str, width=103)  # adjust width as necessary
+        lines = textwrap.wrap(data_str, width=100)  # adjust width as necessary
         for i, line in enumerate(lines):
             c.drawString(x, y - i*14, line)  # adjust 14 (line height) as necessary
     else:
@@ -79,14 +93,15 @@ def client_signature(c: Canvas, x: int, y:int, data_bytes:BytesIO ) -> None:
     c.drawString(x, y, "Client Signature")
     c.line(x+90, y, x+250, y)
     # Now, you can add this "file-like" object to your PDF using reportlab
-    c.drawImage(ImageReader(data_bytes), x+130, y= y , width=60, height=60, mask='auto')
+    c.drawImage(ImageReader(data_bytes), x+130, y= y-10 , width=60, height=60, mask='auto')
     c.drawString(x+350, y, "Date")
     c.line(x+380, y, x+500, y)
     c.drawString(x+400, y+5, gets_todays_date())
     
 
-def create_pdf(data:dict, app_text:dict, language:str):
-    c = canvas.Canvas("form_output.pdf", pagesize=letter)
+def create_pdf(data:dict, signture_img:BytesIO, app_text:dict, language:str) -> BytesIO:
+    buffer = BytesIO()
+    c = canvas.Canvas(buffer, pagesize=letter)
     form = c.acroForm
     c.setTitle(f"wax_release_for, {data['personal_info']['name']} {gets_todays_date()}")
     c.setFont("Times-Roman", 12)
@@ -108,35 +123,39 @@ def create_pdf(data:dict, app_text:dict, language:str):
     textbox(c,form, 350, 550, 200, 24, data['personal_info']['phone'], app_text[language]["personal_info"]["phone"])
     textbox(c,form, 50, 500, 250, 24, data['personal_info']['email'], app_text[language]["personal_info"]["email"])
     textbox(c,form, 350, 500, 100, 24, data['personal_info']['gender'], app_text[language]["personal_info"]["gender"]["label"])
-
+    
     # Multiple Choice Question
     session_header(c, 50, 450, app_text[language]["skin_history"])
-    y_decrement = 0
-    y_pos = 420
+    y = 430
     for key in app_text[language]["wax_mutiplechoice_questions"].keys():
-        print(key)
-        y = y_pos - y_decrement
-        if y < 200:
+        if y < 100:
             c.showPage()
             y = 650
+      
         create_radio_group(c,form, key, app_text[language]["wax_mutiplechoice_questions"][key], 
                            data['multiple_choice_answers'][key], 50, y, app_text[language]["response_options"])
-        y_decrement += 40
-       
-    
+        y -= 40
+  
     ###################### Additional Information ######################
-    session_header(c, 50, 170, "Additional Information")
-    text_area(c, form, 50, 70, 500, 60, data['answers']['medication'], 'medication', 'Are you currently taking medications? If so, please list all (including over the counter drugs/herbal supplements):')
-    
-   # continue with the rest of the questions on a new page
-    c.showPage()
-    text_area(c, form, 50, 650, 500, 60, data['answers']['skin_products'], 'skin_products', 'What skin products do you regularly use on your skin?')
-    text_area(c, form, 50, 550, 500, 60, data['answers']['cancer_history'], 'cancer_history', 'Have you ever been treated for cancer? If yes, when and what types of therapies were used?')
-    text_area(c, form, 50, 450, 500, 60, data['answers']['other_conditions'], 'other_conditions', 'Please list any other illness/condition you are currently being treated for by a medical professional')
-    text_area(c, form, 50, 350, 500, 60, data['answers']['menstrual_cycle'], 'menstrual_cycle', '(Female clients) When is your next menstrual cycle due to begin?')
+    session_header(c, 50, 170 , app_text[language]["additional_info"])
+    # text_area(c, form, 50, 70, 500, 60, data['answers']['medication'], 'medication', 'Are you currently taking medications? If so, please list all (including over the counter drugs/herbal supplements):')
+    y = 70
+    for key in app_text[language]["wax_fillin_questions"].keys():
+        if y < 50:
+            c.showPage()
+            y = 650
+        text_area(c,form, 50, y , 500, 60, data['answers'][key], key, app_text[language]["wax_fillin_questions"][key])    
+        y -= 100
 
-    session_header(c, 50, 300, "Informed Consent Release")
-    chunck_text(c, 50, 280, f"I {data['personal_info']['name']} , do fully understand all the questions above and have answered them all correctly and honestly. I understand that the services offered are not a substitute for medical care. I understand that the skin care professional will completely inform me of what to expect in the course of treatment and will recommend adjustments to my regimen if deemed necessary. I also am aware that individual results are dependent upon my age, skin condition, and lifestyle. I agree to actively participate in following appointment schedules and home care procedures to the best of my ability, so that I may obtain maximum effectiveness. In the event that I may have additional questions or concerns regarding my treatment or suggested home product routine, I will inform my skin care professional immediately. I release and hold harmless the skin care professional Laura Lopez, SKIN by Laura Lo, and the staff harmless from any liability for adverse reactions that may result from this treatment.")
-    client_signature(c, 50, 80, data["signature_img"])
+    ###################### Informed Consent Release ######################
+    if y < 250:
+        c.showPage()
+        y = 650
+    session_header(c, 50, y+70, app_text[language]["informed_consent"]["header"])
+    consent_text = app_text[language]['informed_consent']['consent_text'].format(name=data['personal_info']['name']).replace("_", "")
+    chunck_text(c, 50, y+50, f"{consent_text}")
+    client_signature(c,50, y-200, signture_img)
 
     c.save()
+    pdf_data = buffer.getvalue()
+    return pdf_data

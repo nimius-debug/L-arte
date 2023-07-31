@@ -15,8 +15,7 @@ st.set_page_config(
 def load_json_data(file_path):
     with open(file_path, 'r', encoding='utf-8') as f:
         return json.load(f)
-    
-
+  
 def language_settings(lang):
     st.session_state.language = lang
     # print("language_settings", st.session_state.language)
@@ -29,6 +28,7 @@ def main():
     #gloabal settings
     set_backgound_img()
     hide_footer_streamlit()
+    # database
     
     selection = horizontal_menu()
     if selection == 'Forms':

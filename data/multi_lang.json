@@ -20,6 +20,7 @@
             "tanning_bed_usage": "Do you use a tanning bed?",
             "is_diabetic": "Are you diabetic?"
         },
+        "additional_info": "Additional Information",
         "wax_fillin_questions": {
             "medication": "Are you currently taking medications? If so, please list all (including over the counter drugs/herbal supplements):",
             "skin_products": "What skin products do you regularly use on your skin?",
@@ -32,7 +33,6 @@
             "consent_text": "I ________{name}________ , do fully understand all the questions above and have answered them all correctly and honestly. I understand that the services offered are not a substitute for medical care. I understand that the skin care professional will completely inform me of what to expect in the course of treatment and will recommend adjustments to my regimen if deemed necessary. I also am aware that individual results are dependent upon my age, skin condition, and lifestyle. I agree to actively participate in following appointment schedules and home care procedures to the best of my ability, so that I may obtain maximum effectiveness. In the event that I may have additional questions or concerns regarding my treatment or suggested home product routine, I will inform my skin care professional immediately. I release and hold harmless the skin care professional Laura Lopez, SKIN by Laura Lo, and the staff harmless from any liability for adverse reactions that may result from this treatment."
         },
         "form": {
-            "header": "Skincare Form",
             "sign_form": "Please sign the form",
             "submit": "Submit",
             "submit_success": "Form submitted successfully.",
@@ -63,6 +63,7 @@
             "tanning_bed_usage": "¿Usa una cama de bronceado?",
             "is_diabetic": "¿Es usted diabético?"
         },
+        "additional_info": "Información Adicional",
         "wax_fillin_questions": {
             "medication": "¿Está tomando medicamentos actualmente? Si es así, por favor liste todos (incluyendo medicamentos de venta libre/suplementos herbales):",
             "skin_products": "¿Qué productos para la piel utiliza regularmente en su piel?",
@@ -75,7 +76,6 @@
             "consent_text": "Yo ________{name}________ , entiendo completamente todas las preguntas anteriores y las he respondido correctamente y con honestidad. Entiendo que los servicios ofrecidos no son un sustituto para la atención médica. Entiendo que el profesional del cuidado de la piel me informará completamente sobre qué esperar en el curso del tratamiento y recomendará ajustes en mi régimen si se considera necesario. También soy consciente de que los resultados individuales dependen de mi edad, condición de la piel y estilo de vida. Me comprometo a participar activamente en el seguimiento de los horarios de las citas y los procedimientos de cuidado en casa lo mejor que pueda, para que pueda obtener la máxima efectividad. En el caso de que tenga preguntas o preocupaciones adicionales con respecto a mi tratamiento o rutina de productos para el hogar sugeridos, informaré inmediatamente a mi profesional del cuidado de la piel. Eximo de responsabilidad y mantengo indemne al profesional del cuidado de la piel Laura Lopez, SKIN by Laura Lo, y al personal de cualquier responsabilidad por reacciones adversas que puedan resultar de este tratamiento."
         },
         "form": {
-            "header": "Formulario de Cuidado de la Piel",
             "sign_form": "Por favor firme el formulario",
             "submit": "Enviar",
             "submit_success": "Formulario enviado con éxito.",
