@@ -9,7 +9,7 @@ from utils.deta_db import DetaManager
 
 #########################form#########################
 def display_waxing_form():
-    deta_manager = DetaManager(st.secrets["deta_key"], st.secrets["base_name"], st.secrets["drive_name"])
+    deta_manager = DetaManager(st.secrets["deta_key"], st.secrets["wax_base"], st.secrets["wax_drive"])
     
     from data.map_data import data
     # from data.map_data import wax_mutiplechoice_questions, wax_fillin_questions
@@ -61,7 +61,7 @@ def display_waxing_form():
                 with st.spinner(text="Generating PDF..."):
                     pdf = create_pdf(data, signature_img, st.session_state.app_text, st.session_state.language)
                     deta_manager.put_base(data)
-                    deta_manager.put_drive(f"{data['personal_info']['name']}.pdf",pdf)
+                    deta_manager.put_drive(f"{data['personal_info']['name']}_waxing_form.pdf",pdf)
                 st.success("Form submitted successfully.")
                 # st.toast("added to database successfully.")
                 st.balloons()
