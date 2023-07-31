@@ -36,7 +36,7 @@ def personal_information(data: dict, personal_info: dict, key: str) -> None:
             label_visibility='hidden', 
             key=key+'_email')
         
-        if not validate_email(data["personal_info"]["email"]):
+        if not validate_email(data["personal_info"]["email"]) and data["personal_info"]["email"] :
             st.error("Please enter a valid email address.")
         
         data["personal_info"]["gender"] = st.selectbox(
