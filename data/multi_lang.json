@@ -5,9 +5,21 @@
             "name": "Name",
             "phone": "Phone",
             "email": "Email address",
+            "address": "Address",
+            "dob": "Date of birth",
+            "emergency_contact_label": "Emergency Contact",
+            "emergency_contact_name": "Name of emergency contact",
+            "emergency_contact_phone": "Phone",
             "gender": {
                 "label":"Gender",
                 "options": ["Male", "Female", "Other"]
+            }
+        },
+        "skin_info": {
+            "skin_goals" :"Skin Goals and Concerns:",
+            "skin_type": {
+                "label": "Skin Type",
+                "options": ["Normal/Combination", "Dry", "Oily", "Sensitive","Mild Acne","Moderate Acne","Mature and Aging"]
             }
         },
         "skin_history": "Skin History",
@@ -19,6 +31,40 @@
             "sun_exposure": "Are you exposed to the sun on a daily basis or are you considering spending more time in the sun soon?",
             "tanning_bed_usage": "Do you use a tanning bed?",
             "is_diabetic": "Are you diabetic?"
+        },
+        "facials_fillin_questions":{
+            "currently_using_skin_products": "What skin products are you currently using?",
+            "currently_using_makeup_products": "What makeup products are you currently using?",
+            "wax_regularly": "When was last time you wax your facial skin?",
+            "resurfacing_treatments":"When was last time you ever had facials, chemical peels, microdermabrasion, or any resurfacing treatments before?",
+            "allergies_sensitivities": "Do you have any allergies or sensitivities? if yes, please list them:",
+            "reaction_experience": "Have you ever experienced a reaction to any of the following? Cosmetics, medicine, iodine (shellfish), latex, pollen, food/fruit, animals, fragrance, alpha hydroxy acids, sunscreens. If yes, which ones:",
+            "medication_usage": "Do you take any medications? if yes, please list them:"
+        },
+        "med_history": "Medical History",
+        "outdoor_activities": {
+            "question": "Does your job and lifestyle require that you work/play outdoors?"
+        },
+        "facials_multiplechoice_questions":{
+            "cancer": "Cancer?",
+            "chemotherapy": "Chemotherapy?",
+            "circulatory_issues": "Circulatory issues?",
+            "high_blood_pressure": "High blood pressure?",
+            "arthritis": "Arthritis?",
+            "hysterectomy": "Hysterectomy?",
+            "hormonal_imbalances": "Hormonal imbalances?",
+            "thyroid": "Thyroid?",
+            "diabetes": "Diabetes?",
+            "pregnant": "Pregnant?",
+            "lactating": "Lactating?",
+            "planning_pregnancy": "Planning to be pregnant?",
+            "psoriasis": "Psoriasis?",
+            "cold_sores": "Cold Sores?",
+            "recent_surgeries": "Recent surgeries?",
+            "eczema": "Eczema?",
+            "accutane": "Accutane?",
+            "antibiotics": "Antibiotics?",
+            "birth_control": "Birth Control?"
         },
         "additional_info": "Additional Information",
         "wax_fillin_questions": {
@@ -48,9 +94,21 @@
             "name": "Nombre",
             "phone": "Teléfono",
             "email": "Correo electrónico",
+            "address": "Dirección",
+            "dob": "Fecha de nacimiento",
+            "emergency_contact_label": "Contacto de emergencia",
+            "emergency_contact_name": "Nombre del contacto de emergencia",
+            "emergency_contact_phone": "Teléfono",
             "gender": {
                 "label": "Género",
                 "options": ["Masculino", "Femenino", "Otro"]
+            }
+        },
+        "skin_info":{
+            "skin_goals" :"Objetivos y Preocupaciones de su Piel:",
+            "skin_type":{
+                "label": "Tipo de Piel",
+                "options": ["Normal/Mixta", "Seca", "Grasa", "Sensible","Acné Leve","Acné Moderado","Madura y Envejecimiento"]
             }
         },
         "skin_history": "Historial de piel",
@@ -70,6 +128,40 @@
             "cancer_history": "¿Alguna vez ha sido tratado por cáncer? Si es así, ¿cuándo y qué tipos de terapias se utilizaron?",
             "other_conditions": "Por favor, liste cualquier otra enfermedad/condición por la que esté siendo tratado actualmente por un profesional médico",
             "menstrual_cycle": "(Clientes femeninas) ¿Cuándo está previsto que comience su próximo ciclo menstrual?"
+        },
+        "med_history": "Historial médico",
+        "facials_fillin_questions":{
+            "currently_using_skin_products": "¿Qué productos para la piel estás usando actualmente?",
+            "currently_using_makeup_products": "¿Qué productos de maquillaje estás usando actualmente?",
+            "wax_regularly": "¿Cuándo fue la última vez que te depilaste la piel de la cara?",
+            "resurfacing_treatments": "¿Cuándo fue la última vez que tuviste faciales, peelings químicos, microdermoabrasión o cualquier tratamiento de resurfacing?",
+            "allergies_sensitivities": "¿Tienes alguna alergia o sensibilidad? si la respuesta es sí, por favor listalas:",
+            "reaction_experience": "¿Has experimentado alguna reacción a lo siguiente? Cosméticos, medicina, yodo (mariscos), látex, polen, comida/fruta, animales, fragancia, ácidos alfa hidroxi, protectores solares. Si es así, ¿cuáles:",
+            "medication_usage": "¿Tomas algún medicamento? si la respuesta es sí, por favor listalos:"
+        },
+        "outdoor_activities":{
+            "question": "¿Tu trabajo y estilo de vida requieren que trabajes/juegues al aire libre?"
+        },
+        "facials_multiplechoice_questions":{
+            "cancer": "¿Cáncer?",
+            "chemotherapy": "¿Quimioterapia?",
+            "circulatory_issues": "¿Problemas circulatorios?",
+            "high_blood_pressure": "¿Hipertensión?",
+            "arthritis": "¿Artritis?",
+            "hysterectomy": "¿Histerectomía?",
+            "hormonal_imbalances": "¿Desequilibrios hormonales?",
+            "thyroid": "¿Tiroides?",
+            "diabetes": "¿Diabetes?",
+            "pregnant": "¿Embarazada?",
+            "lactating": "¿Lactancia?",
+            "planning_pregnancy": "¿Planeando quedarse embarazada?",
+            "psoriasis": "¿Psoriasis?",
+            "cold_sores": "¿Herpes labial?",
+            "recent_surgeries": "¿Cirugías recientes?",
+            "eczema": "¿Eczema?",
+            "accutane": "¿Accutane?",
+            "antibiotics": "¿Antibióticos?",
+            "birth_control": "¿Anticonceptivos?"
         },
         "informed_consent": {
             "header": "Consentimiento y Autorización  ",

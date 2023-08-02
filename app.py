@@ -2,7 +2,7 @@ import streamlit as st
 import json
 from components.waxin_form import display_waxing_form
 from components.page_components import sidebar, set_backgound_img, display_logo, hide_footer_streamlit,horizontal_menu
-
+from components.facials_form import display_facial_form
 st.set_page_config(
         page_title="INFORMED CONSENT RELEASE",
         page_icon=":leaves:",
@@ -38,6 +38,8 @@ def main():
         wax, facial = st.tabs(["Waxing Form", "Facial Form"])
         with wax:
             display_waxing_form()
+        with facial:
+            display_facial_form()
     # Create a canvas component
     
     

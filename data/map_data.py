@@ -1,6 +1,7 @@
 ######################data for db#########################
 data = {
         "personal_info": {},
+        "skin_info": {},
         "multiple_choice_answers": {},
         "answers": {},
     }
