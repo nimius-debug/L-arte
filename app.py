@@ -3,6 +3,7 @@ import json
 from components.waxin_form import display_waxing_form
 from components.page_components import sidebar, set_backgound_img, display_logo, hide_footer_streamlit,horizontal_menu
 from components.facials_form import display_facial_form
+from components.form_components import create_canvas
 st.set_page_config(
         page_title="INFORMED CONSENT RELEASE",
         page_icon=":leaves:",
@@ -33,13 +34,30 @@ def main():
     selection = horizontal_menu()
     if selection == 'Forms':
         display_logo() 
-        language = st.selectbox("Select Language", ["english", "spanish"], index=1)
-        language_settings(language)
-        wax, facial = st.tabs(["Waxing Form", "Facial Form"])
-        with wax:
+        col1, col2 = st.columns(2)
+        with col1:
+            language = st.radio(
+                label="Select Language",
+                options=["English", "Spanish"],
+                index=1,
+                horizontal=True,
+            ).lower()  # convert to lower case to match keys in json
+            language_settings(language)
+        with col2:
+            forms = st.selectbox("Select Form",["Waxing Form", "Facial Form"] , index=0)
+        
+        if forms=="Waxing Form":
             display_waxing_form()
-        with facial:
+        else:
             display_facial_form()
+    elif selection == 'Price':
+        tab1, tab2 = st.tabs(["Cat", "Dog"])
+        with tab1:
+            st.write("tab1 cat")
+            create_canvas('canvas1', h=200, w=400)
+        with tab2:
+            st.write("tab2 dog")
+            create_canvas('canvas2', h=200, w=400)
     # Create a canvas component
     
     

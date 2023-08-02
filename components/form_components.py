@@ -121,14 +121,15 @@ def display_informed_consent(data: dict, consent_text ) -> None:
     st.markdown(consent_text, unsafe_allow_html=True)
     
 #5-########################signature pad#########################
-def create_canvas(key: str):
+def create_canvas(key: str, h: int = 200, w: int = 400):
     print("create canvas")
     canvas_result = st_canvas(
         fill_color="rgba(255, 165, 0, 0.3)",  # Fixed fill color with some opacity
         stroke_width=2,
-        height=150,
-        width=250,
+        height=h,
+        width=w,
         key=key,
+        update_streamlit = True
     )
     print(key)
     return canvas_result

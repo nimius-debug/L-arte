@@ -14,7 +14,6 @@ def display_facial_form():
     
     from data.map_data import data
     # from data.map_data import wax_mutiplechoice_questions, wax_fillin_questions
-    
     ######################Personal Information##############################
     st.subheader(st.session_state.app_text[st.session_state.language]["personal_info"]["header"])
     contact_information(data , st.session_state.app_text[st.session_state.language]["personal_info"], key="facials")
@@ -38,8 +37,8 @@ def display_facial_form():
         display_informed_consent(data, st.session_state.app_text[st.session_state.language]["informed_consent"]["consent_text"])
         st.caption(st.session_state.app_text[st.session_state.language]["form"]["sign_form"])
         
-        facial_user_signature = create_canvas("facial")
-    
+        facial_user_signature = create_canvas("canvas0",150,250)
+        
         if facial_user_signature.image_data is not None:
              if facial_user_signature.json_data["objects"]:
                 signature_img = signature_pad(canvas_result=facial_user_signature)
@@ -49,7 +48,7 @@ def display_facial_form():
         if submitted:
             if not facial_user_signature.json_data["objects"]:
                 st.error(st.session_state.app_text[st.session_state.language]["form"]["missing_signature"])
-            elif not data["personal_info"]["name"]:
+            if not data["personal_info"]["name"]:
                 st.error(st.session_state.app_text[st.session_state.language]["form"]["missing_name"])
             elif not data["personal_info"]["email"]:
                 st.error(st.session_state.app_text[st.session_state.language]["form"]["missing_email"])

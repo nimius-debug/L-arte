@@ -17,7 +17,6 @@ def display_waxing_form():
     
     ######################Personal Information##############################
     st.subheader(st.session_state.app_text[st.session_state.language]["personal_info"]["header"])
-    
     contact_information(data , st.session_state.app_text[st.session_state.language]["personal_info"], key="waxing")
     
     with st.form(key='Skincare Form'):
@@ -39,7 +38,7 @@ def display_waxing_form():
         display_informed_consent(data, st.session_state.app_text[st.session_state.language]["informed_consent"]["consent_text"])
         
         st.caption(st.session_state.app_text[st.session_state.language]["form"]["sign_form"])
-        waxing_user_signature = create_canvas("waxing")
+        waxing_user_signature = create_canvas("canvas",150,250)
     
         if waxing_user_signature.image_data is not None:
              if waxing_user_signature.json_data["objects"]:
