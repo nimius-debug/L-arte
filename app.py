@@ -51,17 +51,17 @@ def main():
             display_waxing_form()
         else:
             display_facial_form()
-    elif selection == 'Price':
-        set_vertical_title()
-        col1, col2 = st.columns([1,3])
-        with col1:
-            st.title("PRICE LIST")
+    # elif selection == 'Price':
+    #     set_vertical_title()
+    #     col1, col2 = st.columns([1,3])
+    #     with col1:
+    #         st.title("PRICE LIST")
             
-        with col2:
-            facials_prices()
-            st.title("Facials")
-            st.markdown("## Waxing")
-            st.write("Eyebrows: $15")
+    #     with col2:
+    #         facials_prices()
+    #         st.title("Facials")
+    #         st.markdown("## Waxing")
+    #         st.write("Eyebrows: $15")
             
            
             
