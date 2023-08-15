@@ -113,6 +113,7 @@ def display_text_input_questions(data: dict, questions: dict) -> None:
         data["answers"][key] = " ".join(lines)
 
 #4-########################informed consent#########################
+st.cache_data
 def display_informed_consent(data: dict, consent_text ) -> None:
     """
     Displays the Informed Consent Release section of the form.

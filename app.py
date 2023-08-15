@@ -2,6 +2,7 @@ import streamlit as st
 import json
 from components.waxin_form import display_waxing_form
 from components.page_components import sidebar, set_backgound_img, display_logo, hide_footer_streamlit,horizontal_menu
+from components.price_list import set_vertical_title, facials_prices
 from components.facials_form import display_facial_form
 from components.form_components import create_canvas
 st.set_page_config(
@@ -51,15 +52,21 @@ def main():
         else:
             display_facial_form()
     elif selection == 'Price':
-        tab1, tab2 = st.tabs(["Cat", "Dog"])
-        with tab1:
-            st.write("tab1 cat")
-            create_canvas('canvas1', h=200, w=400)
-        with tab2:
-            st.write("tab2 dog")
-            create_canvas('canvas2', h=200, w=400)
+        set_vertical_title()
+        col1, col2 = st.columns([1,3])
+        with col1:
+            st.title("PRICE LIST")
+            
+        with col2:
+            facials_prices()
+            st.title("Facials")
+            st.markdown("## Waxing")
+            st.write("Eyebrows: $15")
+            
+           
+            
     # Create a canvas component
-    
-    
+    # css-10trblm e1nzilvr0
+    # css-10trblm e1nzilvr0
 if __name__ == "__main__":
     main()

@@ -1,12 +1,12 @@
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import letter
 from io import BytesIO
-from utils.pdf_helpers import gets_todays_date, session_header, textbox, create_radio_group, text_area,\
-    check_overflown, chunck_text,client_signature,create_personal_info,create_multichoice_questionnaire,create_fillin_questionnaire
+from utils.pdf_helpers import gets_todays_date, session_header, textbox,chunck_text,client_signature,\
+    create_personal_info,create_multichoice_questionnaire,create_fillin_questionnaire
 
-def create_pdf(data:dict, signture_img:BytesIO, app_text:dict, language:str) -> BytesIO:
-    # buffer = BytesIO()
-    c = canvas.Canvas("testing.pdf", pagesize=letter)
+def create_wax_pdf(data:dict, signture_img:BytesIO, app_text:dict, language:str) -> BytesIO:
+    buffer = BytesIO()
+    c = canvas.Canvas(buffer, pagesize=letter)
     form = c.acroForm
     c.setTitle(f"wax_release_for, {data['personal_info']['name']} {gets_todays_date()}")
     c.setFont("Times-Roman", 12)
@@ -47,5 +47,5 @@ def create_pdf(data:dict, signture_img:BytesIO, app_text:dict, language:str) -> 
     client_signature(c,50, y-240, signture_img)
 
     c.save()
-    # pdf_data = buffer.getvalue()
-    # return pdf_data
+    pdf_data = buffer.getvalue()
+    return pdf_data

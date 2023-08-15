@@ -34,9 +34,8 @@ def horizontal_menu():
         }
     )
     return selected_option
-    
-      
 #########################BACKGROUND  #########################
+
 #########################image to base64 background #########################
 @st.cache_data
 def get_img_as_base64(file_pic):

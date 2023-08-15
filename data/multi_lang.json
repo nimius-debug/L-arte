@@ -43,7 +43,7 @@
         },
         "med_history": "Medical History",
         "outdoor_activities": {
-            "question": "Does your job and lifestyle require that you work/play outdoors?"
+            "outdoor_question": "Does your job and lifestyle require that you work/play outdoors?"
         },
         "facials_multiplechoice_questions":{
             "cancer": "Cancer?",
@@ -140,7 +140,7 @@
             "medication_usage": "¿Tomas algún medicamento? si la respuesta es sí, por favor listalos:"
         },
         "outdoor_activities":{
-            "question": "¿Tu trabajo y estilo de vida requieren que trabajes/juegues al aire libre?"
+            "outdoor_question": "¿Tu trabajo y estilo de vida requieren que trabajes/juegues al aire libre?"
         },
         "facials_multiplechoice_questions":{
             "cancer": "¿Cáncer?",
