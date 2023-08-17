@@ -86,6 +86,59 @@
             "missing_name": "Please enter your name",
             "missing_email": "Please enter your email address",
             "missing_phone": "Please enter your phone number"
+        },
+        "pricing": {
+            "menu": "Price Menu",
+            "waxing": {
+                "label": "Waxing",
+                "name": {
+                    "upper_lip": "Upper Lip (Mustache)",
+                    "full_face": "Full Face (Mustache, Chin, Eyebrows)",
+                    "underarms": "Underarms",
+                    "bikini_area": "Bikini Area",
+                    "intimate_area": "Intimate Area",
+                    "intimate_area_treatment": "Intimate Area + Treatment",
+                    "full_leg": "Full Leg",
+                    "half_leg": "Half Leg"
+                }
+            },
+            "facials": {
+                "label": "Facials",
+                "description": "Each facial is customized according to skin type. Anti-stain, Acne, Anti-wrinkle or Moisturizing",
+                "name": {
+                    "new_client": "New Client Facial",
+                    "custom": "Custom Facial",
+                    "back": "Back Facial",
+                    "dermaplaning_addon": "\"Dermaplaning\" Add-on"
+                }
+            },
+            "lashes_brows": {
+                "label": "Lashes & Brows",
+                "name": {
+                    "lash_lift": "Lash \"Lift\"",
+                    "lash_lift_tint": "Lash \"Lift\" and Tint",
+                    "brow_tint_wax": "Eyebrow Tint and Waxing",
+                    "brow_lamination_wax": "Eyebrow Lamination and Waxing",
+                    "brow_lamination_wax_tint": "Eyebrow Lamination + Waxing + Tint"
+                }
+            },
+            "advanced_facials": {
+                "label": "Advanced Facials",
+                "description": "Consultation required. For these treatments, we need to prepare the skin and also post-treatment follow-ups",
+                "name": {
+                    "peeling": "\"Peeling\" Treatment",
+                    "microneedling": "\"Microneedling\" Treatment",
+                    "peeling_package": "Package x3 \"Peeling\" Treatment",
+                    "microneedling_package": "Package x3 \"Microneedling\""
+                }
+            }
+        },
+        "home":{
+            "greeting": "Hey there, lovely souls! Welcome to Skin by Laura Lo, my Esthetician Studio",
+            "description": "where we're all about embracing the skin we're in and unlocking its natural beauty. I'm :orange[Laura Lopez], your skincare enthusiast and partner in this incredible journey to radiant, glowing skin.",
+            "background": "Hailing from the vibrant fusion of Colombia and the sunny streets of Miami, I, Laura, know firsthand the power of feeling comfortable and confident in your own skin. Growing up, I battled stubborn hormonal acne that left both physical and emotional marks, but it was this very struggle that fueled my passion for esthetics. Turning my weakness into strength, I, Laura, embarked on a mission to clear my skin and transform my life and now, I'm here to share that passion with you.",
+            "school" : "With a background in Health Science with minors in Business Administration and Information Technology, I spent years in the corporate finance world, but my heart yearned for something more meaningful. So, I took a leap of faith, attended esthetician school in Tampa, and never looked back. My goal is simple – through Skin by Laura Lo, I want to help you feel better in your skin and work together to achieve the skincare results you've always dreamed of. So let's dive in, address those skin concerns, and uncover the beauty that's been waiting to shine. ",
+            "bye" : "Can't wait to meet you!"
         }
     },
     "spanish": {
@@ -175,7 +228,63 @@
             "missing_name": "Por favor ingrese su nombre",
             "missing_email": "Por favor ingrese su correo electrónico",
             "missing_phone": "Por favor ingrese su número de teléfono"
+        },
+        "pricing": {
+            "menu": "Menu Precios",
+            "waxing": {
+                "label": "Depilación con Cera",    
+                "name" : {
+                    "upper_lip": "Bigote (Labio Superior)",
+                    "full_face": "Cara Completa (Bigote, Mentón, Cejas)",
+                    "underarms": "Axilas",
+                    "bikini_area": "Zona Bikini",
+                    "intimate_area": "Zona Íntima",
+                    "intimate_area_treatment": "Zona Íntima + Tratamiento",
+                    "full_leg": "Pierna Completa",
+                    "half_leg": "Media Pierna"
+                }
+            },
+            "facials": {
+                "label": "Faciales",
+                "description": "Cada facial es personalizado de acuerdo al tipo de piel. Anti-manchas, Acné, Anti-arrugas o Hidratante",
+                "name":{
+                    "new_client": "Facial Cliente Nuevo",
+                    "custom": "Facial Personalizado",
+                    "back": "Facial Espalda",
+                    "dermaplaning_addon": "\"Dermaplaning\" añadido"
+                }
+               
+            },
+            "lashes_brows": {
+                "label": "Pestañas & Cejas",
+                "name": {
+                    "lash_lift": "Levantamiento \"Lift\" Pestañas",
+                    "lash_lift_tint": "Levantamiento \"Lift\" Pestañas y Tinte",
+                    "brow_tint_wax": "Cejas Tinte y Depilación",
+                    "brow_lamination_wax": "Cejas Laminación y Depilación",
+                    "brow_lamination_wax_tint": "Cejas Laminación + Depilación + Tinte"
+                }
+            },
+            "advanced_facials": {
+                "label": "Faciales Avanzados",
+                "description": "Consulta necesaria. Para estos tratamientos, debemos preparar la piel y también seguimientos pos-tratamiento",
+                "name" : {
+                    "peeling": "Tratamiento “Peeling”",
+                    "microneedling": "Tratamiento “Microneedling”",
+                    "peeling_package": "Paquete x3 Peeling Tratamiento",
+                    "microneedling_package": "Paquete x3 Microneedling"
+                }
+                
+            }
+        },
+        "home":{
+            "greeting": "¡Hola a todos! ¡Bienvenidos a Skin by Laura Lo, mi Estudio de Estética",
+            "description": "donde celebramos la belleza natural de nuestra piel y la llevamos a su máximo esplendor! Soy :orange[Laura Lopez], una entusiasta del cuidado de la piel y su compañera en esta increíble travesía hacia una piel radiante y resplandeciente.",
+            "background": "Proveniente de la vibrante mezcla de Colombia y las soleadas calles de Miami, yo, Laura, comprendo de primera mano el poder de sentirnos cómodos y seguros en nuestra propia piel. Durante mi juventud, luché contra el persistente acné hormonal, dejando marcas tanto físicas como emocionales, pero fue precisamente esta batalla la que despertó mi pasión por la estética. Convirtiendo mi debilidad en fortaleza, Convirtiendo mi debilidad en fortaleza, emprendí una misión a limpiar mi piel y transformar mi vida. ¡Y ahora, estoy aquí para compartir esa pasión contigo!",
+            "school" : "Con una formación en Ciencias de la Salud con especializaciones en Administración de Empresas e Informacion de Sistemas, pasé años trabajando en el mundo financiero corporativo, pero mi corazón anhelaba algo más significativo. Así que decidí dar un salto de fe, asistí a una academia de estética en Tampa y nunca miré hacia atrás. Mi objetivo es sencillo: a través de Skin by Laura Lo, deseo ayudarte a sentirte mejor en tu piel y trabajar juntos para lograr los resultados que siempre has deseado. Así que sumérgete conmigo, solucionemos esas preocupaciones de piel y descubramos la belleza que ha estado esperando brillar. ",
+            "bye" : "¡Espero verte muy pronto!"
         }
     }
 }
+
   

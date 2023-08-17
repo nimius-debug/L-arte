@@ -58,19 +58,24 @@ def display_facial_form():
                 st.error(st.session_state.app_text[st.session_state.language]["form"]["missing_phone"])
             else:
                 with st.spinner(text="Generating PDF..."):
-                    st.write(data)
                     facial_pdf = create_facial_pdf(data, signature_img, st.session_state.app_text, st.session_state.language)
                     deta_manager.put_base(data)
                     deta_manager.put_drive(f"{data['personal_info']['name']}_waxing_form.pdf",facial_pdf)
                 st.success("Form submitted successfully.")
                 st.balloons()
                 submission_flag = True
+                filename = f"{data['personal_info']['name']}_facial_form.pdf"
+                data["personal_info"].clear()
+                data["skin_info"].clear()
+                data["multiple_choice_answers"].clear()
+                data["answers"].clear()
+                
                 
     if submission_flag:
         st.download_button(
         "⬇️ Download PDF",
-            data=wax_pdf,
-            file_name=f"{data['personal_info']['name']}_waxing_form.pdf",
+            data=facial_pdf,
+            file_name=filename,
             mime="application/pdf",
         )
         st.toast("downloaded successfully.")
