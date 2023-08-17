@@ -5,6 +5,7 @@ from components.page_components import set_backgound_img, display_logo, hide_foo
 from components.price_list import Price_page
 from components.facials_form import display_facial_form
 from components.home import display_home
+from components.footer import footer
 
 st.set_page_config(
         page_title="INFORMED CONSENT RELEASE",
@@ -80,7 +81,7 @@ def main():
         else:
             display_facial_form()
     
-
+    footer()
     
            
 if __name__ == "__main__":
