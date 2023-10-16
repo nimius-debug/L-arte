@@ -104,7 +104,7 @@
             },
             "facials": {
                 "label": "Facials",
-                "description": "Each facial is customized according to skin type. Anti-stain, Acne, Anti-wrinkle or Moisturizing",
+                "description": "Each facial is customized according to the skin type. Brightening , Acne, Anti-Aging, or Hydrating",
                 "name": {
                     "new_client": "New Client Facial",
                     "custom": "Custom Facial",

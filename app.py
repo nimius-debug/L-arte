@@ -8,7 +8,7 @@ from components.home import display_home
 from components.footer import footer
 
 st.set_page_config(
-        page_title="INFORMED CONSENT RELEASE",
+        page_title="skinbylauraLo",
         page_icon=":leaves:",
         layout="centered",
         initial_sidebar_state="collapsed",

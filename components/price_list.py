@@ -42,7 +42,7 @@ def style_opening():
                 font-weight: 600;
             }
         </style>
-        <p class="opening-text"> Open 9:30 am - 5:00 pm | Tuesday | Friday | Sunday  </p>
+        <p class="opening-text"> Open 9:30 am - 5:00 pm | Tuesday | Thursday | Friday | Sunday  </p>
     """, unsafe_allow_html=True)
     
 ######################### DISPLAY Facials #########################  
@@ -143,7 +143,7 @@ def display_LashesBrows():
     df = pd.DataFrame(
         {
             "name": list(st.session_state.app_text[st.session_state.language]["pricing"]["lashes_brows"]["name"].values()),
-            "price" : ["$45.00","$55.00","$40.00","$48.00","$60.00"],
+            "price" : ["$30.00","$37.00","$37.00","$35.00","$49.00"],
         }
     )   
     
